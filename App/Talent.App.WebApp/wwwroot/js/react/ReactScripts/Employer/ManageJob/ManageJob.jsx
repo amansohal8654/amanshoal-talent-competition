@@ -1,11 +1,13 @@
-﻿import React from 'react';
+﻿/// <reference path="../../employerfeed/talentprofile.jsx" />
+import React from 'react';
 import ReactDOM from 'react-dom';
 import Cookies from 'js-cookie';
 import LoggedInBanner from '../../Layout/Banner/LoggedInBanner.jsx';
 import { LoggedInNavigation } from '../../Layout/LoggedInNavigation.jsx';
 import { JobSummaryCard } from './JobSummaryCard.jsx';
 import { BodyWrapper, loaderData } from '../../Layout/BodyWrapper.jsx';
-import { Pagination, Icon, Dropdown, Checkbox, Accordion, Form, Segment } from 'semantic-ui-react';
+import { Card, Pagination, Icon, Dropdown, Checkbox, Accordion, Form, Segment } from 'semantic-ui-react';
+
 
 export default class ManageJob extends React.Component {
     constructor(props) {
@@ -21,6 +23,7 @@ export default class ManageJob extends React.Component {
             sortBy: {
                 date: "desc"
             },
+
             filter: {
                 showActive: true,
                 showClosed: false,
@@ -39,8 +42,11 @@ export default class ManageJob extends React.Component {
 
     init() {
         let loaderData = TalentUtil.deepCopy(this.state.loaderData)
+        loaderData.allowedUsers.push("Employer");
+        loaderData.allowedUsers.push("Recruiter");
         loaderData.isLoading = false;
-        this.setState({ loaderData });//comment this
+        this.setState({ loaderData });
+        //comment this
 
         //set loaderData.isLoading to false after getting data
         //this.loadData(() =>
@@ -51,13 +57,34 @@ export default class ManageJob extends React.Component {
     }
 
     componentDidMount() {
-        this.init();
+        this.loadData()
     };
 
-    loadData(callback) {
-        var link = 'http://localhost:51689/listing/listing/getSortedEmployerJobs';
+    loadData() {
+       
         var cookies = Cookies.get('talentAuthToken');
-       // your ajax call and other logic goes here
+        $.ajax({
+            url: 'http://localhost:51689/listing/listing/getSortedEmployerJobs',
+            headers: {
+                'Authorization': 'Bearer ' + cookies,
+                'Content-Type': 'application/json'
+            },
+            type: "GET",
+            contentType: "application/json",
+            dataType: "json",
+            success: function (res) {
+                let loadJobs = null;
+                if (res.myJobs = !null) {
+                    loadJobs = res.myJobs
+                    console.log("loadJobs", loadJobs)
+                }
+               
+            }.bind(this),
+            error: function (res) {
+                console.log(res.status)
+            }
+        })
+        this.init()
     }
 
     loadNewData(data) {
@@ -75,9 +102,14 @@ export default class ManageJob extends React.Component {
     }
 
     render() {
+       
         return (
             <BodyWrapper reload={this.init} loaderData={this.state.loaderData}>
-               <div className ="ui container">Your table goes here</div>
+                <div className="ui container">
+                    <JobSummaryCard
+                        details={this.state.myJobs}
+                    />
+                    </div>
             </BodyWrapper>
         )
     }
