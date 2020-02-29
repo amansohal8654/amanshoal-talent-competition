@@ -13666,11 +13666,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aman\\source\\repos\\amandeep-talent-competition\\Talent.Services.Listing\\Talent.Services.Talent.csproj",
+      "projectUniqueName": "C:\\Users\\aman\\Source\\Repos\\Amandeep-talent-competition\\Talent.Services.Listing\\Talent.Services.Talent.csproj",
       "projectName": "Talent.Services.Talent",
-      "projectPath": "C:\\Users\\aman\\source\\repos\\amandeep-talent-competition\\Talent.Services.Listing\\Talent.Services.Talent.csproj",
+      "projectPath": "C:\\Users\\aman\\Source\\Repos\\Amandeep-talent-competition\\Talent.Services.Listing\\Talent.Services.Talent.csproj",
       "packagesPath": "C:\\Users\\aman\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aman\\source\\repos\\amandeep-talent-competition\\Talent.Services.Listing\\obj\\",
+      "outputPath": "C:\\Users\\aman\\Source\\Repos\\Amandeep-talent-competition\\Talent.Services.Listing\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\aman\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -13686,11 +13686,11 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\aman\\source\\repos\\amandeep-talent-competition\\Talent.Common\\Talent.Common.csproj": {
-              "projectPath": "C:\\Users\\aman\\source\\repos\\amandeep-talent-competition\\Talent.Common\\Talent.Common.csproj"
+            "C:\\Users\\aman\\Source\\Repos\\Amandeep-talent-competition\\Talent.Common\\Talent.Common.csproj": {
+              "projectPath": "C:\\Users\\aman\\Source\\Repos\\Amandeep-talent-competition\\Talent.Common\\Talent.Common.csproj"
             },
-            "C:\\Users\\aman\\source\\repos\\amandeep-talent-competition\\Talent.Services.Profile\\Talent.Services.Profile.csproj": {
-              "projectPath": "C:\\Users\\aman\\source\\repos\\amandeep-talent-competition\\Talent.Services.Profile\\Talent.Services.Profile.csproj"
+            "C:\\Users\\aman\\Source\\Repos\\Amandeep-talent-competition\\Talent.Services.Profile\\Talent.Services.Profile.csproj": {
+              "projectPath": "C:\\Users\\aman\\Source\\Repos\\Amandeep-talent-competition\\Talent.Services.Profile\\Talent.Services.Profile.csproj"
             }
           }
         }

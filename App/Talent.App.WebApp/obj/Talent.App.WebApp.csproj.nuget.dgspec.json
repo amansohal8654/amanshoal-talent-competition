@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\aman\\source\\repos\\amandeep-talent-competition\\App\\Talent.App.WebApp\\Talent.App.WebApp.csproj": {}
+    "C:\\Users\\aman\\Source\\Repos\\Amandeep-talent-competition\\App\\Talent.App.WebApp\\Talent.App.WebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\aman\\source\\repos\\amandeep-talent-competition\\App\\Talent.App.WebApp\\Talent.App.WebApp.csproj": {
+    "C:\\Users\\aman\\Source\\Repos\\Amandeep-talent-competition\\App\\Talent.App.WebApp\\Talent.App.WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aman\\source\\repos\\amandeep-talent-competition\\App\\Talent.App.WebApp\\Talent.App.WebApp.csproj",
+        "projectUniqueName": "C:\\Users\\aman\\Source\\Repos\\Amandeep-talent-competition\\App\\Talent.App.WebApp\\Talent.App.WebApp.csproj",
         "projectName": "Talent.App.WebApp",
-        "projectPath": "C:\\Users\\aman\\source\\repos\\amandeep-talent-competition\\App\\Talent.App.WebApp\\Talent.App.WebApp.csproj",
+        "projectPath": "C:\\Users\\aman\\Source\\Repos\\Amandeep-talent-competition\\App\\Talent.App.WebApp\\Talent.App.WebApp.csproj",
         "packagesPath": "C:\\Users\\aman\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aman\\source\\repos\\amandeep-talent-competition\\App\\Talent.App.WebApp\\obj\\",
+        "outputPath": "C:\\Users\\aman\\Source\\Repos\\Amandeep-talent-competition\\App\\Talent.App.WebApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\aman\\AppData\\Roaming\\NuGet\\NuGet.Config",
