@@ -35,16 +35,19 @@ export class JobSummaryCard extends React.Component {
         let Status = this.props.details ? this.props.details.Status : ""
 
         return (
-            <div className="ui raised link job card">
+             <div className="ui raised link job card">
                 <div className="content">
-                    <div className="header">{Title}</div>
+                    <div className="header">Junior Software Developer{Title}</div>
                     <div className="meta">
-                        <span className="category">{Summary}</span>
+                        <span className="category">Full time{Summary}</span>
                     </div>
                     <div className="description">
                         <p>{JobDetails}</p>
                         <p>{Status}</p>
-
+                        <p>Jenny is a student studying Media Management at the New School</p>
+                        <p>Jenny is a student studying Media Management at the New School</p>
+                        <p>Jenny is a student studying Media Management at the New School</p>
+                        <p>Jenny is a student studying Media Management at the New School</p>
                     </div>
                 </div>
                 <div className="extra content">
