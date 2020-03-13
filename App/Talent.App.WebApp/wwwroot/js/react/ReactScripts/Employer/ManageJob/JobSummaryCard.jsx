@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import Cookies from 'js-cookie';
 import { Popup } from 'semantic-ui-react';
 import moment from 'moment';
@@ -7,17 +7,6 @@ export class JobSummaryCard extends React.Component {
     constructor(props) {
         super(props);
 
-        const details = props.details ?
-            Object.assign({}, props.details)
-            : {
-                Title: "",
-                Summary: "",
-                JobDetails: "",
-                Status: ""
-            }
-        this.state = {
-            newContact: details
-        }
         this.selectJob = this.selectJob.bind(this)
     }
 
@@ -29,36 +18,31 @@ export class JobSummaryCard extends React.Component {
     render() {
        
 
-        let Title = this.props.details ? `${this.props.details.Title}` : ""
-        let Summary = this.props.details ? `${this.props.details.Summary}` : ""
-        let JobDetails = this.props.details ? this.props.details.JobDetails : ""
-        let Status = this.props.details ? this.props.details.Status : ""
+        var data = this.props.data
 
         return (
-             <div className="ui raised link job card">
+            <div className="card manage-job">
                 <div className="content">
-                    <div className="header">Junior Software Developer{Title}</div>
-                    <div className="meta">
-                        <span className="category">Full time{Summary}</span>
+                    <div className="header">{data.title} </div>
+                    <Popup trigger={
+                        <a className="ui black right ribbon label">
+                            <i className="user icon"></i>{data.noOfSuggestions}
+                        </a>
+                    }>
+                        <span>Suggested Talents</span>
+                    </Popup>
+
+                    <div className="meta"> {data.location.city}, {data.location.country}</div>
+
+                    <div className="description job-summary">
+                        {data.summary}
                     </div>
-                    <div className="description">
-                        <p>{JobDetails}</p>
-                        <p>{Status}</p>
-                        <p>Jenny is a student studying Media Management at the New School</p>
-                        <p>Jenny is a student studying Media Management at the New School</p>
-                        <p>Jenny is a student studying Media Management at the New School</p>
-                        <p>Jenny is a student studying Media Management at the New School</p>
-                    </div>
-                </div>
-                <div className="extra content">
-                    <div className="left floated">
-                        <button className="ui blue basic button">Apply now</button>
-                    </div>
-                    <div className="right floated author">
-                        <img className="ui avatar image" src="https://semantic-ui.com/images/avatar/small/matt.jpg" /> Company Z
+                    <div className="extra content">
                     </div>
                 </div>
+               
             </div>
+           
             )
 
     }
