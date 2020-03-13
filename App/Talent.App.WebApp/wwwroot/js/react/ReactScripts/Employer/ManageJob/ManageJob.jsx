@@ -1,4 +1,4 @@
-﻿/// <reference path="../../employerfeed/talentprofile.jsx" />
+/// <reference path="../../employerfeed/talentprofile.jsx" />
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Cookies from 'js-cookie';
@@ -71,11 +71,20 @@ export default class ManageJob extends React.Component {
             },
             type: "GET",
             contentType: "application/json",
+            data: {
+                activePage: this.state.activePage,
+                sortByDate: this.state.sortBy.date,
+                showActive: this.state.filter.showActive,
+                showClosed: this.state.filter.showClosed,
+                showDraft: this.state.filter.showDraft,
+                showExpired: this.state.filter.showExpired,
+                showUnexpired: this.state.filter.showUnexpired
+            },
             dataType: "json",
             success: function (res) {
                 let loadJobs = null;
-                if (res.myJobs = !null) {
-                    loadJobs = res.myJobs
+                if (res) {
+                    this.setState({ loadJobs: res.myJobs },);
                     console.log("loadJobs", loadJobs)
                 }
                
@@ -102,13 +111,32 @@ export default class ManageJob extends React.Component {
     }
 
     render() {
-       
+        var res = undefined;
+        if (this.state.loadJobs.length > 0) {
+
+            res = this.state.loadJobs.map(x =>
+                <JobSummaryCard
+                    key={x.id}
+                    data={x}
+                    details={this.loadData}
+                />);
+        }
         return (
             <BodyWrapper reload={this.init} loaderData={this.state.loaderData}>
                 <div className="ui container">
-                    <JobSummaryCard
-                        details={this.state.myJobs}
-                    />
+                    <div className="ui three cards">
+                        {
+                            res != undefined ?
+                                res
+                                : <React.Fragment>
+                                    <p style={{
+                                        paddingTop: 20,
+                                        paddingBottom: 50,
+                                        marginLeft: 15
+                                    }}>No Jobs Found</p>
+                                </React.Fragment>
+                        }
+                    </div>
                     </div>
             </BodyWrapper>
         )
