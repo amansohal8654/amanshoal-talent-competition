@@ -32,6 +32,6 @@
     "react-tag-input": "^6.4.2",
     "semantic-ui-react": "^0.81.3",
     "webpack": "^4.41.6",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.12"
   }
 }
